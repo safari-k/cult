@@ -221,8 +221,8 @@ class WorldGeometry(DirectObject):
 
         self.world = world
         self.node = core.NodePath('world')
-        shader = core.Shader.load(core.Shader.SLGLSL, 'media/shaders/vertex.glsl', 'media/shaders/fragment.glsl')
-        self.node.setShader(shader)
+        # shader = core.Shader.load(core.Shader.SLGLSL, 'media/shaders/vertex.glsl', 'media/shaders/fragment.glsl')
+        # self.node.setShader(shader)
         self.node.setShaderInput('color_scale', 1.0)
 
         self.bordertexture = loader.loadTexture('media/textures/border.png',

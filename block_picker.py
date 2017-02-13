@@ -14,8 +14,8 @@ class BlockPicker(DirectObject):
         self.picker = app.loader.loadModel('media/models/picked.egg')
         self.picker.reparentTo(app.render)
 
-        shader = Shader.load(Shader.SLGLSL, 'media/shaders/vertex.glsl', 'media/shaders/flat.glsl')
-        self.picker.setShader(shader)
+        # shader = Shader.load(Shader.SLGLSL, 'media/shaders/vertex.glsl', 'media/shaders/flat.glsl')
+        # self.picker.setShader(shader)
         self.picker.setShaderInput('color', Vec4(0.3, 0.3, 1.0, 0.5))
 
         self.picking_planes = [Plane(Vec3(0, 0, 1), Point3(0, 0, z + 1)) for z in self.world.zlevels()]

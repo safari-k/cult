@@ -1,13 +1,13 @@
 from direct.showbase.DirectObject import DirectObject
 
-from panda3d.core import Point2, VBase3D, PNMImage, Texture, CardMaker
+from panda3d.core import Point2, PNMImage, Texture, CardMaker, VBase3F
 
 
 class ZMap(DirectObject):
     COLORS = [
-        VBase3D(0.7, 0.7, 0.9),  # AIR
-        VBase3D(0.4, 0.5, 0.1),  # DIRT
-        VBase3D(0.6, 0.6, 0.6)   # STONE
+        VBase3F(0.7, 0.7, 0.9),  # AIR
+        VBase3F(0.4, 0.5, 0.1),  # DIRT
+        VBase3F(0.6, 0.6, 0.6)   # STONE
     ]
 
     def __init__(self, world, app):
@@ -18,7 +18,7 @@ class ZMap(DirectObject):
         for z in self.world.zlevels():
             for x in range(self.world.height):
                 mix = sum([ZMap.COLORS[self.world.get_block(x, y, z).substance]
-                          for y in range(self.world.height)], VBase3D(0.0))
+                          for y in range(self.world.height)], VBase3F(0.0))
                 self.image.setXel(x, z, mix / float(self.world.height))
 
         self.texture = Texture()

@@ -38,6 +38,7 @@ class Dorfdelf(ShowBase):
         self.win.requestProperties(wp)
 
         self.render.setAntialias(core.AntialiasAttrib.MAuto)
+        self.render.setShaderAuto()
         self.setBackgroundColor(0.5, 0.5, 0.5)
         self.disableMouse()
         self.enableParticles()
